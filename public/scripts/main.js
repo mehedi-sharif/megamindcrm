@@ -4,6 +4,11 @@
   "use strict";
 
   function init() {
+    // Read layout once, before any of the writes below. The writes themselves
+    // run on the next frame so animations.js can measure without a forced reflow.
+    const viewportWidth = window.innerWidth;
+    const initialScrollY = window.scrollY;
+
     // Accordion
     // ----------------------------------------
     const accordions = document.querySelectorAll("[data-accordion]");
@@ -44,9 +49,6 @@
       if (!tabsNav) return;
       const tabsNavItem = tabsNav.querySelectorAll("[data-tab]");
       if (!tabsNavItem.length) return;
-      const activeTabName = tabsNavItem[0].getAttribute("data-tab");
-      setActiveTab(tabGroup, activeTabName);
-
       tabsNavItem.forEach((tabNavItem) => {
         tabNavItem.addEventListener("click", () => {
           const tabName = tabNavItem.dataset.tab;
@@ -110,47 +112,53 @@
       });
     });
 
-    // Starred Box
-    const mainFeatureStarred = document.querySelectorAll("[data-is-starred]");
-    mainFeatureStarred.forEach((el) => {
-      const isStarred = el.getAttribute("data-is-starred");
-      el.style.display = isStarred === "true" ? "block" : "none";
-    });
-
-    // BN Cards indent on desktop
-    const bnCardsLayout = () => {
-      const bnCards = document.querySelectorAll("[data-bn-card]");
-      bnCards.forEach((card) => {
-        const cardNumber = card.getAttribute("data-bn-card");
-        if (cardNumber) {
-          if (window.innerWidth > 1280) {
-            card.style.marginInline = `${(cardNumber - 1) * 38}px`;
-          } else {
-            card.style.marginInline = "0px";
-          }
-        }
+    // BN Cards indent on desktop. Width is read once, then every card is written.
+    const bnCardsLayout = (width) => {
+      const wide = width > 1280;
+      document.querySelectorAll("[data-bn-card]").forEach((card) => {
+        const cardNumber = Number(card.getAttribute("data-bn-card"));
+        card.style.marginInline =
+          wide && cardNumber ? `${(cardNumber - 1) * 38}px` : "0px";
       });
     };
-    window.addEventListener("resize", bnCardsLayout);
-    bnCardsLayout();
+    window.addEventListener("resize", () => {
+      bnCardsLayout(window.innerWidth);
+    });
 
-    // Comparison Row - randomize images
-    const comparisonRows = document.querySelectorAll(
-      "[data-comparison-row-images-path]",
-    );
-    comparisonRows.forEach((row) => {
-      const images = JSON.parse(row.dataset.comparisonRowImagesPath);
-      const container = row;
-      container.innerHTML = "";
-      images.sort(() => 0.5 - Math.random());
-      images.slice(0, Math.floor(Math.random() * 4) + 2).forEach((imgPath) => {
-        const img = document.createElement("img");
-        img.src = imgPath;
-        img.alt = "Comparison Image";
-        img.draggable = false;
-        img.className = "max-h-12";
-        container.appendChild(img);
+    // Style and DOM writes happen after this turn's layout reads.
+    const tabGroupsForPaint = document.querySelectorAll("[data-tab-group]");
+    requestAnimationFrame(() => {
+      tabGroupsForPaint.forEach((tabGroup) => {
+        const tabsNav = tabGroup.querySelector("[data-tab-nav]");
+        const first = tabsNav?.querySelector("[data-tab]");
+        const activeTabName = first?.getAttribute("data-tab");
+        if (activeTabName) setActiveTab(tabGroup, activeTabName);
       });
+
+      document.querySelectorAll("[data-is-starred]").forEach((el) => {
+        const isStarred = el.getAttribute("data-is-starred");
+        el.style.display = isStarred === "true" ? "block" : "none";
+      });
+
+      bnCardsLayout(viewportWidth);
+
+      document
+        .querySelectorAll("[data-comparison-row-images-path]")
+        .forEach((row) => {
+          const images = JSON.parse(row.dataset.comparisonRowImagesPath);
+          row.replaceChildren();
+          images.sort(() => 0.5 - Math.random());
+          images
+            .slice(0, Math.floor(Math.random() * 4) + 2)
+            .forEach((imgPath) => {
+              const img = document.createElement("img");
+              img.src = imgPath;
+              img.alt = "Comparison Image";
+              img.draggable = false;
+              img.className = "max-h-12";
+              row.appendChild(img);
+            });
+        });
     });
 
     // Testimonial Videos - play/pause on click
@@ -177,7 +185,7 @@
     });
 
     // Hero Video Showcase - sound toggle
-    // Note: GSAP animation is handled in animations.js
+    // Note: the scroll tilt is handled in animations.js
     const heroVideoShowcase = document.querySelector(
       "[data-gsap-video-showcase]",
     );
@@ -243,7 +251,7 @@
     navMenuBgToggle();
 
     if (header) {
-      let lastScrollY = window.scrollY;
+      let lastScrollY = initialScrollY;
       const scrollThreshold = 200;
       window.addEventListener(
         "scroll",
