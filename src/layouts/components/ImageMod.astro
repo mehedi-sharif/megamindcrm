@@ -14,6 +14,8 @@ interface Props {
   fit?: "cover" | "contain" | "fill" | "none" | "scale-down";
   class?: string;
   style?: any;
+  /** Above-the-fold image: eager load and high fetch priority. */
+  priority?: boolean;
 }
 
 // Destructuring Astro.props to get the component's props
@@ -28,6 +30,7 @@ let {
   format,
   style,
   fit,
+  priority,
 } = Astro.props;
 
 src = `/public${src}`;
@@ -58,6 +61,7 @@ const isValidPath = images[src] ? true : false;
       class={className}
       format={format}
       style={style}
+      priority={priority}
     />
   )
 }

@@ -71,3 +71,22 @@
 </div>
 
 <!-- Note: sound toggle JS is handled in main.js via [data-gsap-video-showcase] selector -->
+
+<style>
+  /* Start pose matches the old GSAP set(), so the first paint is not flat. */
+  [data-gsap-video-showcase] {
+    transform: rotateX(15deg) scale(0.8);
+  }
+  @media (min-width: 1280px) {
+    [data-gsap-video-showcase] {
+      top: -250px;
+      transform: rotateX(10deg) scale(0.8);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-gsap-video-showcase] {
+      top: 0;
+      transform: none;
+    }
+  }
+</style>
