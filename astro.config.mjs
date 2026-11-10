@@ -52,6 +52,9 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
 export default defineConfig({
   adapter: cloudflare({ imageService: "compile" }),
   output: "static",
+  // The stylesheet is the only render-blocking request. Inlining it lets the
+  // first paint happen with the HTML instead of waiting on a second fetch.
+  build: { inlineStylesheets: "always" },
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
