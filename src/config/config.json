@@ -4,8 +4,8 @@
     "base_url": "https://megamindcrm.com/",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.svg",
+    "favicon": "/images/megamind-favicon.svg",
+    "logo": "/images/megamind-logo.svg",
     "logo_width": "160",
     "logo_height": "45",
     "logo_text": "MegamindCRM"
@@ -35,5 +35,6 @@
     "meta_author": "Automark",
     "meta_image": "/images/og-image.png",
     "meta_description": "The all-in-one marketing and sales automation platform"
-  }
+  },
+  "draft": false
 }
