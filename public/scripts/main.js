@@ -222,42 +222,48 @@
         return;
       }
 
+      // Read layout only after the menu is open, and only on the next frame,
+      // so the read is not forced by the style writes earlier in init().
       const updateBgHeight = () => {
-        const rect = headerEl.getBoundingClientRect();
-        if (navToggleEl.checked) {
-          navMenuBg.style.height = rect.height + "px";
-        } else {
+        if (!navToggleEl.checked) {
           navMenuBg.style.height = "0px";
+          return;
         }
+        const height = headerEl.getBoundingClientRect().height;
+        navMenuBg.style.height = height + "px";
       };
 
-      navToggleEl.addEventListener("change", updateBgHeight);
-      window.addEventListener("resize", updateBgHeight);
-      updateBgHeight();
+      const scheduleBgHeight = () => {
+        requestAnimationFrame(updateBgHeight);
+      };
+
+      navToggleEl.addEventListener("change", scheduleBgHeight);
+      window.addEventListener("resize", scheduleBgHeight);
     };
     navMenuBgToggle();
 
     if (header) {
       let lastScrollY = window.scrollY;
       const scrollThreshold = 200;
-      window.addEventListener("scroll", () => {
-        if (navToggle && navToggle.checked) {
-          header.classList.remove("hide");
-          lastScrollY = window.scrollY;
-          return;
-        }
-
-        if (window.scrollY > scrollThreshold) {
-          if (window.scrollY < lastScrollY) {
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollY = window.scrollY;
+          if (navToggle && navToggle.checked) {
             header.classList.remove("hide");
-          } else {
-            header.classList.add("hide");
+            lastScrollY = scrollY;
+            return;
           }
-        } else {
-          header.classList.remove("hide");
-        }
-        lastScrollY = window.scrollY;
-      });
+
+          if (scrollY > scrollThreshold) {
+            header.classList.toggle("hide", scrollY >= lastScrollY);
+          } else {
+            header.classList.remove("hide");
+          }
+          lastScrollY = scrollY;
+        },
+        { passive: true },
+      );
     }
   }
 

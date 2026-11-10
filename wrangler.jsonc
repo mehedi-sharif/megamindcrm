@@ -1,7 +1,7 @@
 {
   "name": "megamindcrm",
   "account_id": "4f619fee1c3a7876f013c8feb3584d9d",
-  "compatibility_date": "2026-11-10",
+  "compatibility_date": "2026-11-08",
   "compatibility_flags": [
     "nodejs_compat"
   ],
