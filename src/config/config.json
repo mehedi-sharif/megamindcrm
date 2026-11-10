@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Automark",
-    "base_url": "https://automark-astro.vercel.app",
+    "title": "MegamindCRM",
+    "base_url": "https://megamindcrm.com/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.svg",
     "logo_width": "160",
     "logo_height": "45",
-    "logo_text": "Automark"
+    "logo_text": "MegamindCRM"
   },
   "settings": {
     "sticky_header": true
