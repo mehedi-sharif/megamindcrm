@@ -1,11 +1,29 @@
 {
-  // Cloudflare Workers — Static Assets deployment
-  // Deploy:  npm run deploy:cf-workers
-  // Preview: npm run preview:cf-workers
-  "name": "automark-astro",
-  "compatibility_date": "2026-03-02",
+  "name": "megamindcrm",
+  "account_id": "4f619fee1c3a7876f013c8feb3584d9d",
+  "compatibility_date": "2026-11-10",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
-    "directory": "./dist",
+    "directory": "./dist/client",
+    "binding": "ASSETS",
     "not_found_handling": "404-page"
-  }
+  },
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  },
+  "routes": [
+    {
+      "pattern": "megamindcrm.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.megamindcrm.com",
+      "custom_domain": true
+    }
+  ]
 }
