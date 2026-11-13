@@ -1,7 +1,7 @@
 ---
-title: "Kyber Home Services Achieves 1,800% ROI"
-meta_title: "Kyber Home Services Case Study"
-description: "How Kyber Home Services transformed their local lead generation and achieved 1,800% ROI using automated follow-ups."
+title: "Example Services Co. Achieves 1,800% ROI"
+meta_title: "Example Services Co. Case Study"
+description: "How Example Services Co. transformed their local lead generation and achieved 1,800% ROI using automated follow-ups."
 date: 2024-01-20
 draft: false
 
@@ -10,7 +10,7 @@ thumbnail: "/images/case-study-hero.png"
 
 badge: "Local Services"
 logo: "/images/brands/pingdom-logo-svg-150px.svg"
-company: "Kyber Services"
+company: "Example Services Co."
 
 stats:
   - value: "40%"
@@ -21,7 +21,7 @@ stats:
 client_info:
   - icon: "/images/icons/careerdevelopment.svg"
     label: "Client"
-    value: "Kyber Home Services"
+    value: "Example Services Co."
   - icon: "/images/icons/healthicon.svg"
     label: "Industry"
     value: "Home Repair"
@@ -36,7 +36,7 @@ overview:
   image: "/images/case-study-overview.png"
   title: "Overview"
   content: |
-    Kyber Home Services is a local contracting business that was losing potential jobs due to missed calls while on the field.
+    Example Services Co. is a local contracting business that was losing potential jobs due to missed calls while on the field.
 
     When they approached us, they were struggling with inefficient lead management and lacked a system to immediately text back missed calls.
 
@@ -50,7 +50,7 @@ challenges:
     Frameworks of brand adapted. They do a brilliant blend of brand expression and operation design that supports full-cycle.
   quote: "They truly understood our local business needs and helped us stop losing jobs to our competitors."
   quote_author:
-    name: "Sarah Mitchell"
+    name: "Avery Ellis"
     designation: "Owner"
     avatar: "/images/avatar.png"
 

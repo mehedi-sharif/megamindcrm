@@ -17,22 +17,22 @@
     "contact_form_action": "#",
     "checklist_form_action": "#",
     "apply_form_action": "#",
-    "copyright": "Copyright &copy; 2026 <strong><a target=\"_blank\" href=\"https://themefisher.com/\">Themefisher</a></strong> All Rights Reserved",
+    "copyright": "Copyright &copy; 2026 <strong><a target=\"_blank\" href=\"https://megamindcrm.com/\">MegamindCRM</a></strong> All Rights Reserved",
     "footer_tagline": "Empowering Marketing businesses through intelligent automation.",
-    "footer_email": "contact@Automark.com",
+    "footer_email": "hello@megamindcrm.com",
     "footer_phone": "(+1) 165-320-0102"
   },
   "navigation_button": {
     "enable": true,
-    "label": "Get This Template",
-    "link": "https://themefisher.com/products/automark-astro?aff=automarkdemo"
+    "label": "View Pricing",
+    "link": "/pricing"
   },
   "google_tag_manager": {
     "enable": false,
     "gtm_id": "GTM-XXXXXX"
   },
   "metadata": {
-    "meta_author": "Automark",
+    "meta_author": "MegamindCRM",
     "meta_image": "/images/og-image.png",
     "meta_description": "The all-in-one marketing and sales automation platform"
   },

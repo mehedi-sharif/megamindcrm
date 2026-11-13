@@ -1,7 +1,7 @@
 ---
-title: "TechNova Dental Grows Revenue by 320% in 90 Days"
-meta_title: "TechNova Dental Case Study"
-description: "How TechNova Dental used our automation platform to triple their patient appointments."
+title: "Example Dental Co. Grows Revenue by 320% in 90 Days"
+meta_title: "Example Dental Co. Case Study"
+description: "How Example Dental Co. used our automation platform to triple their patient appointments."
 date: 2024-02-15
 draft: false
 
@@ -10,7 +10,7 @@ thumbnail: "/images/case-study-hero-2.png"
 
 badge: "Healthcare"
 logo: "/images/brands/dropbox-logo-svg-150px.svg"
-company: "TechNova Dental"
+company: "Example Dental Co."
 
 stats:
   - value: "30%"
@@ -21,7 +21,7 @@ stats:
 client_info:
   - icon: "/images/icons/careerdevelopment.svg"
     label: "Client"
-    value: "TechNova Dental"
+    value: "Example Dental Co."
   - icon: "/images/icons/healthicon.svg"
     label: "Industry"
     value: "Healthcare"
@@ -36,7 +36,7 @@ overview:
   image: "/images/case-study-overview.png"
   title: "Overview"
   content: |
-    TechNova Dental is a fast-growing local practice that wanted to increase their patient volume.
+    Example Dental Co. is a fast-growing local practice that wanted to increase their patient volume.
 
     Before our software, their front desk struggled with manual appointment reminders and following up with old patients.
 
@@ -50,7 +50,7 @@ challenges:
     Their patient no-show rate was climbing.
   quote: "We were drowning in manual work. This software gave our front desk back their time and filled our calendar."
   quote_author:
-    name: "Marcus Chen"
+    name: "Sam Taylor"
     designation: "Practice Manager"
     avatar: "/images/avatar.png"
 
@@ -67,7 +67,7 @@ solution:
 results:
   title: "Results"
   content: |
-    In just 90 days, TechNova Dental saw a 320% increase in reactivated patients.
+    In just 90 days, Example Dental Co. saw a 320% increase in reactivated patients.
 
     The front desk reclaimed 30 hours per week previously spent on manual confirmation calls.
   metrics:

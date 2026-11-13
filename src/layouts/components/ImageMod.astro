@@ -33,6 +33,7 @@ let {
   priority,
 } = Astro.props;
 
+const publicSrc = src;
 src = `/public${src}`;
 
 // Glob pattern to load images from the /public/images folder
@@ -40,6 +41,11 @@ const images = import.meta.glob("/public/images/**/*.{jpeg,jpg,png,gif,svg}");
 
 // Check if the source path is valid
 const isValidPath = images[src] ? true : false;
+
+// SVGs are already browser-ready; the image service cannot transform them.
+const svgImage = isValidPath && src.endsWith(".svg")
+  ? ((await images[src]()) as { default: ImageMetadata }).default
+  : undefined;
 
 // Log a warning message in red if the image is not found
 !isValidPath &&
@@ -49,7 +55,19 @@ const isValidPath = images[src] ? true : false;
 ---
 
 {
-  isValidPath && (
+  svgImage ? (
+    <img
+      src={publicSrc}
+      alt={alt}
+      width={width ?? svgImage.width}
+      height={height ?? svgImage.height}
+      loading={priority ? "eager" : (loading ?? "lazy")}
+      decoding={decoding ?? "async"}
+      fetchpriority={priority ? "high" : undefined}
+      class={className}
+      style={style}
+    />
+  ) : isValidPath && (
     <Image
       src={images[src]() as Promise<{ default: ImageMetadata }>}
       alt={alt}

@@ -16,7 +16,7 @@ banner:
     enable: true
     label: "Book a Demo"
     link: "/contact"
-  image: "/images/automark_dashboard.png"
+  image: "/images/megamindcrm_dashboard.png"
 
 partners:
   enable: true

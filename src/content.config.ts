@@ -11,19 +11,6 @@ const commonFields = {
   draft: z.boolean().optional(),
 };
 
-const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/blog" }),
-  schema: z.object({
-    ...commonFields,
-    author: z.string().default("Admin"),
-    author_image: z.string().optional(),
-    categories: z.array(z.string()).default(() => ["others"]),
-    tags: z.array(z.string()).default(() => ["others"]),
-    tag: z.string().optional(),
-    read_time: z.string().optional(),
-  }),
-});
-
 const pagesCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/pages" }),
   schema: z.object({ ...commonFields }),
@@ -459,20 +446,6 @@ const integrationsCollection = defineCollection({
   }),
 });
 
-const blogIndexCollection = defineCollection({
-  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/blog" }),
-  schema: z.object({
-    ...commonFields,
-    page_header: z
-      .object({ title: z.string(), featured_post: z.string().optional() })
-      .optional(),
-    featured_post: z.object({ enable: z.boolean() }).optional(),
-    latest_posts: z
-      .object({ enable: z.boolean(), title: z.string() })
-      .optional(),
-  }),
-});
-
 const ctaSectionCollection = defineCollection({
   loader: glob({
     pattern: "call-to-action.{md,mdx}",
@@ -596,8 +569,6 @@ const businessNeedsSectionCollection = defineCollection({
 });
 
 export const collections = {
-  blog: blogCollection,
-  blogIndex: blogIndexCollection,
   pages: pagesCollection,
   about: aboutCollection,
   contact: contactCollection,

@@ -27,7 +27,7 @@ gallery:
 what_we_offer:
   enable: true
   title: "What We Offer"
-  subtitle: "Automark's intuitive platform makes it easy for team members to organize, prioritize and solve customer requests — all in a familiar interface."
+  subtitle: "MegamindCRM's intuitive platform makes it easy for team members to organize, prioritize and solve customer requests — all in a familiar interface."
   offers:
     - logo: "/images/icons/healthicon.svg"
       title: "Health & Wellness"
@@ -60,11 +60,11 @@ staff_testimonials:
   items:
     - quote: "They truly understood our business at a depth, offering data-driven updates on time, we designed and managed a project to drive value, including time, and integrate productively. It offers the full gamut"
       avatar: "/images/avatar.png"
-      name: "Sarah Mitchell"
+      name: "Avery Ellis"
       designation: "Marketing Director"
     - quote: "They truly understood our business at a depth, offering data-driven updates on time, we designed and managed a project to drive value, including time, and integrate productively. It offers the full gamut"
       avatar: "/images/avatar.png"
-      name: "James Carter"
+      name: "Cameron Gray"
       designation: "Product Lead"
 
 open_positions:

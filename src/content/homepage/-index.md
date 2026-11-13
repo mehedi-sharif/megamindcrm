@@ -113,8 +113,8 @@ single_testimonial:
       completely eliminated our need for 4 other separate platforms and
       organized our entire customer pipeline.
     avatar: /images/avatar.png
-    name: Ronald Richards
-    company: Local Services Co.
+    name: Alex Carter
+    company: Example Local Services Co.
 
 growth_process:
   enable: true

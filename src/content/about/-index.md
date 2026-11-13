@@ -28,16 +28,16 @@ our_team:
   title: "Meet Our <strong>Team Of Experts</strong>"
   members:
     - image: "/images/peoples/Profile Image.png"
-      name: "Josh Wangombe"
+      name: "Sam Taylor"
       role: "Co-Founder & CTO"
     - image: "/images/peoples/Profile Image-1.png"
-      name: "Daniel Jenson"
+      name: "Jamie Reed"
       role: "Co-Founder & CEO"
     - image: "/images/peoples/Profile Image-2.png"
-      name: "Toun Aalbers"
+      name: "Morgan Blake"
       role: "Co-Founder & CTO"
     - image: "/images/peoples/Profile Image-3.png"
-      name: "Peter van Ursel"
+      name: "Riley Quinn"
       role: "Customer Success Director"
 
 core_values:

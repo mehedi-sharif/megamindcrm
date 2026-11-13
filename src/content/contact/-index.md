@@ -14,8 +14,8 @@ contact_info:
   items:
     - type: "email"
       title: "Email Us"
-      detail: "hello@yoursoftware.com"
-      link: "mailto:hello@yoursoftware.com"
+      detail: "hello@megamindcrm.com"
+      link: "mailto:hello@megamindcrm.com"
       icon: "FaEnvelope"
     - type: "phone"
       title: "Call or Text Us"

@@ -4,8 +4,8 @@ title: "Quick Answers for the Smart Investors"
 description: "Find answers to common questions about our product and services."
 button:
   enable: true
-  label: "Get This Template"
-  link: "https://themefisher.com/products/automark-astro?aff=automarkdemo"
+  label: "View Pricing"
+  link: "/pricing"
 items:
   - question: "Is this software hard to set up?"
     answer: "Not at all. We built this platform specifically for local business owners who aren't tech experts. We provide templates and 1-on-1 support to get you running fast."

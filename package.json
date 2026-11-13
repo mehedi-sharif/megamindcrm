@@ -1,8 +1,8 @@
 {
-  "name": "automark-astro",
+  "name": "megamindcrm",
   "version": "1.0.1",
-  "description": "Automark is a marketing and sales automation platform",
-  "author": "Themefisher",
+  "description": "MegamindCRM is a marketing and sales automation platform",
+  "author": "MegamindCRM",
   "license": "MIT",
   "packageManager": "pnpm@11.9.0",
   "type": "module",
